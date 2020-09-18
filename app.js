@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 
 // launch the server 
-app.listen(process.env.PORT|5001,function(){
+app.listen(process.env.PORT || 5001,function(){
 
     console.log("Server is running @  ");
 
