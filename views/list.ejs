@@ -13,16 +13,22 @@
     </div>
   
     <div class="box">
-            <% for( let index = 0; index < newListItems.length; index++ ) { %>
+            <form action="/delete" method="POST" id="checkboxForm">
+            <% newListItems.forEach(element => { %>
                 <div class="item">
-                    <input type="checkbox">
-                        <p><%=newListItems[index]%></p>
+                    
+                    <input type="checkbox" name="checkbox" value="<%=element._id%> "onchange="document.getElementById('checkboxForm').submit()"/> 
+                          <p><%=element.name%></p>
+                
                 </div>
-            <% } %>
+         
+            <% }) %>
+        </form>
+      
              
       <form class="item" action="/" method="post">
         <input type="text" name="itemtoAdd" placeholder="Add New Task" autocomplete="off">
-        <button type="submit">+</button>
+        <button type="submit" value="<%= dayinHTML%> ">+</button>
     </form>
 
      </div>
